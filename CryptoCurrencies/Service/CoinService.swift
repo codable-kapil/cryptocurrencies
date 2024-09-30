@@ -19,6 +19,8 @@ class CoinService {
     private static let enpointURL = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
     private var cancellable = Set<AnyCancellable>()
     
+    /// Fetches coins information from API endpoint URL, decodes and parse into the Coin array usign async await
+    /// - Returns: Coins array when successfull and throws APIError in case of failure
     func fetchCoins() async throws -> [Coin] {
         guard let coinURL = URL(string: Self.enpointURL) else { throw APIError.invalidURL }
         
@@ -35,6 +37,9 @@ class CoinService {
         }
     }
     
+    
+    /// Fetches coins information from API endpoint URL, decodes and parse into the Coin array using Combine framework
+    /// - Returns: Future with Coins array when successfull and APIError in case of failure
     func fetchCoinsWithCombine() -> Future<[Coin], APIError> {
         return Future { promise in
             guard let coinURL = URL(string: Self.enpointURL) else { return promise(.failure(APIError.invalidURL)) }
@@ -59,6 +64,6 @@ class CoinService {
                     promise(.success(coins))
                 }
                 .store(in: &self.cancellable)
-            }
         }
+    }
 }

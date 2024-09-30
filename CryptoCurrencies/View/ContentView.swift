@@ -27,7 +27,7 @@ struct ContentView: View {
                                 .aspectRatio(contentMode: .fit)
                         }
                     placeholder: {
-                        
+                        // Add a placeholder view to display while image is getting downloaded
                     }.frame(width: 50)
                         
                         VStack(alignment: .leading, content: {

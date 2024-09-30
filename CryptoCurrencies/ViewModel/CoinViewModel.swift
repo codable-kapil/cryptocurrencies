@@ -14,11 +14,13 @@ class CoinViewModel: ObservableObject {
     private let coinService = CoinService()
     private var cancellables = Set<AnyCancellable>()
     
+    /// This initializer can call  getCoins (async await) or getCoinsUsingCombine (combine framework). Please uncomment accordingly
     init() {
         //getCoins()
         getCoinsUsingCombine()
     }
     
+    /// Gets crypto currencies information from the API endpoint using async await
     func getCoins() {
         Task {
             do {
@@ -34,6 +36,7 @@ class CoinViewModel: ObservableObject {
         }
     }
     
+    /// Gets crypto currencies information from the API endpoint using combine
     func getCoinsUsingCombine() {
         coinService.fetchCoinsWithCombine()
             .sink { _ in
@@ -41,6 +44,5 @@ class CoinViewModel: ObservableObject {
                 self?.coins = coins
             }
             .store(in: &self.cancellables)
-
     }
 }
