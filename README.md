@@ -15,3 +15,5 @@ Cypto currencies is a simple iOS app that demonstrate getting data from a networ
 ## Connect for more such content
 
 - Medium: https://medium.com/@codable-kapil
+
+![Crypto](https://github.com/user-attachments/assets/edf750b7-7bb4-4074-97cc-19e6611d85ff)
