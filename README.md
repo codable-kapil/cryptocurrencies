@@ -2,6 +2,15 @@
 
 Cypto currencies is a simple iOS app that demonstrate getting data from a network API endpoint and render in a SwiftUI view.
 
+<table>
+  <tr>
+    <th><strong>Crypto Currency List</strong></th>
+  </tr>
+  <tr>
+    <td valign="top"><img src="https://github.com/user-attachments/assets/edf750b7-7bb4-4074-97cc-19e6611d85ff" width="480" /></td>
+  </tr>
+</table>
+
 ## Characteristics
 
 - [x] SwiftUI
@@ -15,5 +24,3 @@ Cypto currencies is a simple iOS app that demonstrate getting data from a networ
 ## Connect for more such content
 
 - Medium: https://medium.com/@codable-kapil
-
-![Crypto](https://github.com/user-attachments/assets/edf750b7-7bb4-4074-97cc-19e6611d85ff)
